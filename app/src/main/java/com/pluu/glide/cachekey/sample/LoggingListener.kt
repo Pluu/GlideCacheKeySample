@@ -14,7 +14,7 @@ class LoggingListener<R> : RequestListener<R> {
         isFirstResource: Boolean
     ): Boolean {
         logcat("GLIDE") {
-            "onResourceReady(%s, %s, %s, %s, %s)".format(resource, model, target, dataSource, isFirstResource)
+            "onResourceReady(%s, %s, %s)".format(model, dataSource, isFirstResource)
         }
         return false
     }
@@ -26,7 +26,7 @@ class LoggingListener<R> : RequestListener<R> {
         isFirstResource: Boolean
     ): Boolean {
         logcat("GLIDE") {
-            "onException(%s, %s, %s, %s)".format(e, model, target, isFirstResource)
+            "onException(%s, %s, %s)".format(e, model, isFirstResource)
         }
         return false
     }
